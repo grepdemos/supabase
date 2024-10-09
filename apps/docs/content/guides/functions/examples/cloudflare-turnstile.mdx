@@ -44,7 +44,7 @@ Deno.serve(async (req) => {
   // Validate the token by calling the
   // "/siteverify" API endpoint.
   let formData = new FormData()
-  formData.append('secret', Deno.env.get('CLOUDFLARE_SECRET_KEY') ?? '')
+  formData.append('secret', Deno.env.get('CLOUDFLARE_TURNSTILE_SECRET_KEY') ?? '')
   formData.append('response', token)
   formData.append('remoteip', ip)
 
